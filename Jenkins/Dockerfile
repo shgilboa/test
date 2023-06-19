@@ -1,5 +1,5 @@
-FROM jenkins/jenkins:lts-jdk11
-ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+FROM jenkins/jenkins:latest
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false -Dhttp.proxyPort=3128 -Dhttp.proxyHost=10.67.37.157 -Dhttps.proxyPort=3128 -Dhttps.proxyHost=10.67.37.157
 
 # Install plugins includin JCasC
 COPY jenkins-plugins.txt /usr/share/jenkins/ref/plugins.txt
