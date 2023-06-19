@@ -1,3 +1,30 @@
 unclassified:
   location:
     url: http://server_ip:8080/
+    
+jenkins:
+  systemMessage: "Hutt Hutt"
+  proxy:
+    name: "10.67.37.157"
+    port: 3128
+
+jobs:
+#  - file: /var/jenkins_home/workspace/Application/Jenkinsfile
+  - script: >
+      pipelineJob('test-pipeline') {
+        definition {
+          cps {
+            script("""\
+              pipeline {
+                agent any
+                stages {
+                  stage ('test') {
+                    steps {
+                      echo "hello"
+                    }
+                  }
+                }
+              }""".stripIndent())
+          }
+        }
+      }
