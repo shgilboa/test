@@ -9,7 +9,7 @@ jenkins:
     port: 3128
 
 jobs:
-#  - file: /var/jenkins_home/workspace/Application/Jenkinsfile
+#  - file: /var/jenkins_home/temp/Application/Jenkinsfile
   - script: >
       pipelineJob('test-pipeline') {
         definition {
